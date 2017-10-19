@@ -1,0 +1,72 @@
+<html>
+
+<body>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Email
+                    </th>
+                    <th>
+                        Roll
+                    </th>
+                    <th>
+                        Rating
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                <form action="/rate" method="POST">
+                    <tr>
+                        <td>
+                            {{user.name}}
+
+                        </td>
+                        <td>
+                            {{user.email}}
+                        </td>
+                        <td>
+                            <input type="text" name="roll" value="{{user.roll}}" readonly="true">
+
+
+                        </td>
+                        <td>
+
+                            <fieldset>
+                                <input type="radio" name="option" value="1" checked="true" />1
+                                <br/>
+                                <input type="radio" name="option" value="2">2
+                                <br/>
+                                <input type="radio" name="option" value="3">3
+                                <br/>
+                                <input type="radio" name="option" value="4">4
+                                <br/>
+                                <input type="radio" name="option" value="5">5
+
+
+                                <br/>
+
+
+                                <button type="submit" class="btn btn-primary">submit</button>
+                            </fieldset>
+
+                        </td>
+
+
+                    </tr>
+                </form>
+
+                {% endfor %}
+
+            </tbody>
+        </table>
+    </div>
+
+</body>
+
+</html>

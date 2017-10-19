@@ -1,0 +1,69 @@
+<html>
+
+<body>
+          <!--   <div>
+            <input type="email" name="email" placeholder="Enter the email of the user">
+        </div>-->
+        <div>
+           <table>
+               <thead>
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Roll
+                    </th>
+                    <th>
+                        Email
+                    </th>
+                    <th>
+                        Action
+                    </th>
+                </tr>   
+               </thead>
+               <tbody>
+                 {% for user in users %}
+                   <form action="/updateStatus" method="POST">
+                     <tr> 
+                    <td>
+                       {{user.name}}
+
+                    </td>
+                    <td>
+                       {{user.roll}} 
+                   </td>
+                    <td>
+                    <input type="email" name="email" value="{{user.email}}" readonly="true"> 
+                        
+
+                    </td>
+                    <td>
+                    
+                       <fieldset>
+                       <input type="radio" name="option" value="verified" checked="true" />Verified
+                       <br/>
+                        <input type="radio" name="option" value="rejected">Rejected  
+                    
+               
+                        <br/>
+
+           
+        <button type="submit" class="btn btn-primary">submit</button>
+        </fieldset>
+
+             </td>
+              
+
+                 </tr>
+        </form>
+
+                   {% endfor %}
+
+               </tbody>
+    </table>
+    </div>
+
+</body>
+
+</html>

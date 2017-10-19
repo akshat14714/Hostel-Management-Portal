@@ -1,0 +1,50 @@
+<html>
+
+<body>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        Title
+                    </th>
+                    <th>
+                        Complaint
+                    </th>
+                    <th>
+                        User_Roll_No
+                    </th>
+                    <th>
+                        Status
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for report in reports %}
+                <form action="/addComment" method="POST">
+                    <tr>
+                        <td>
+                            <input type="text" name="title" value="{{report.title}}" readonly="true">
+                        </td>
+                        <td>
+                            {{report.quer}}
+                        </td>
+                        <td>
+                            {{report.roll}}
+                        </td>
+                        <td>
+                            <fieldset>
+                                <input type="text" name="comment" placeholder="addcomment">
+                                <br/>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </fieldset>
+                        </td>
+                    </tr>
+                </form>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
